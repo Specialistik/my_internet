@@ -8,10 +8,12 @@
     "react-dom": "^16.4.0",
     "react-hot-loader": "^4.13.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "http-server -a 0.0.0.0 -p 8000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
