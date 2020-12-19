@@ -39,7 +39,7 @@ class Person(models.Model):
     passport = models.CharField(max_length=10, verbose_name=u"Серия, номер паспорта (без пробелов)")
     role = models.ForeignKey(Role, default=3, on_delete=models.RESTRICT, verbose_name=u'Роль')
     address = models.CharField(max_length=80, verbose_name=u"Адрес")
-    operator_type = models.ForeignKey(Operator, verbose_name=u"Оператор связи", on_delete=models.RESTRICT)
+    operator_type = models.ForeignKey(Operator, verbose_name=u"Оператор связи (без пробелов, без +7)", on_delete=models.RESTRICT)
     passport_pic = models.ImageField(upload_to='passport1', verbose_name=u'Первая страница паспорта')
     passport_pic2 = models.ImageField(upload_to='passport2', verbose_name=u'Вторая страница паспорта')
 

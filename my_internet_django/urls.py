@@ -18,11 +18,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from core.views import login
+from core.views import login, index
 
 
 urlpatterns = [
-    path('', login), 
+    path('', index), 
     path('admin/', admin.site.urls),
     path('api/login/', login),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

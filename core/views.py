@@ -7,17 +7,14 @@ from .models import Person
 
 
 def index(request):
-    return render(request, 'index.html')
-
-    
+    return render(request, 'login.html')
 
 def login(request):
     if request.method == "POST":
         try:
             person = Person.objects.get(login=request.POST['username'], password=request.POST['password'])
-            return JsonResponse({'token': person.token})
+            return JsonResponse({'result': True, 'token': person.token})
         except Person.DoesNotExist:
-            return redirect('/')
-        #do something if form is valid
+            return JsonResponse({'result': False, 'token': ''})
     else:
         return render(request, 'index.html')

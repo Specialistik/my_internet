@@ -40,8 +40,8 @@ export default class App extends Component{
       <Router>
         <div>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          {/*}PrivateRoute exact isloggedin={isLoggedIn()} path="/" component={Home} />
+          {/*<Route exact path="/login" component={Login} />
+          }PrivateRoute exact isloggedin={isLoggedIn()} path="/" component={Home} />
           <Route exact path="/login" component={Login} /> */}
         </div>
     </Router>
