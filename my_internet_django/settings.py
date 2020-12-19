@@ -1,3 +1,4 @@
+import os
 """
 Django settings for my_internet_django project.
 
@@ -14,7 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -78,7 +79,7 @@ WSGI_APPLICATION = 'my_internet_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_internet',
+        'NAME': 'my_internet2',
         'USER': 'postgres',
         'PASSWORD': '1f53601c',
         'HOST': '127.0.0.1',
@@ -124,3 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'

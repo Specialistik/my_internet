@@ -1,14 +1,23 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import redirect, render
 from django.http import JsonResponse
-from . import helpers
+from django.contrib.auth import authenticate
+
+from .models import Person
 
 
 def index(request):
-    template = loader.get_template('polls/index.html')
-    return HttpResponse(template.render(request))
+    return render(request, 'index.html')
 
+    
 
-def login(request, user, password):
-    return JsonResponse({'token': helpers.generate_token(user, password)})
+def login(request):
+    if request.method == "POST":
+        try:
+            person = Person.objects.get(login=request.POST['username'], password=request.POST['password'])
+            return JsonResponse({'token': person.token})
+        except Person.DoesNotExist:
+            return redirect('/')
+        #do something if form is valid
+    else:
+        return render(request, 'index.html')

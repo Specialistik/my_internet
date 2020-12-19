@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 node_modules/
-client/code_modules/
+client/node_modules/
+mobile/node_modules/
+media/

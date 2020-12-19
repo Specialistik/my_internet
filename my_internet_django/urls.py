@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import login, index
+from django.conf import settings
+from django.conf.urls.static import static
+
+from core.views import login
 
 
 urlpatterns = [
-    path('/', index),
+    path('', login), 
     path('admin/', admin.site.urls),
-    path('api/login/<str:user>/<str:password>/', login),
-]
+    path('api/login/', login),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
