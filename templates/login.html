@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,12 +6,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/app.css" crossorigin="anonymous">
+    <style>
+      html,body,#root{
+        background: #A3A5A6;
+      }
+      .App {
+        text-align: center;
+      }
+
+      .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+        height: 80px;
+      }
+
+      .App-header {
+        background-color: #222;
+        height: 150px;
+        padding: 20px;
+        color: white;
+      }
+
+      .App-title {
+        font-size: 1.5em;
+      }
+
+      .App-intro {
+        font-size: large;
+      }
+      .LoginForm{
+        color: #F8E462;
+        text-align: center;
+        
+        /* In legacy web browsers such as Firefox 9
+          we need to specify the width of the flex container */
+        width: 100%;
+      }  
+      
+      @keyframes App-logo-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @media all and (min-width: 480px) {
+        .LoginForm {
+          padding: 60px 0;
+        }
+
+        .LoginForm form {
+          margin: 0 auto;
+          max-width: 450px;
+        }
+      }
+      .navbar{
+        background: #F8E462;
+      }
+      .btn{
+        background: #F8E462;
+        color: #fff;
+      }
+      .btn:hover{
+        background: #F8E462;
+        color: #fff;
+      }
+      .help-block{
+        color: #F8E462;
+      }
+      .container{
+        display: flex;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 520px) {
+        .navbar,.LoginForm{
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      .custom-btn {
+        background-color: black;
+        width: 100%;
+      }
+
+      .nav-container{
+        height: 85px;
+      }
+
+      .navbar-default .navbar-nav>li>a{
+        line-height: 50px;
+      }
+
+      .form-group {
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      .btn-pay {
+        color: black;
+      }
+
+      .person_info {
+        font-size: 22px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 4px;
+      }
+
+      .content {
+        font-size: 20px;
+      }
+    </style>
     
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/static/js/login.js"></script>
+    <script>
+      $('#submit_btn').click(function(e) {
+        e.preventDefault();
+        var bodyFormData = new FormData();
+        bodyFormData.append('username', $('#login').val());
+        bodyFormData.append('password', $('#password').val());
+        axios({
+            method: 'post',
+            url: '/api/login/',
+            data: bodyFormData
+        })
+        .then(function (response) {
+            //handle success
+            console.log('success', response);
+        })
+        .catch(function (response) {
+            //handle error
+            console.log('error', response);
+        });
+    });
+    </script>
     <title>Мой интернет</title>
   </head>
   <body>
