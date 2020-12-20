@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from './login.jsx';
+//import Login from './login.jsx';
 import './App.css';
 // import { PrivateRoute } from "./PrivateRoute.jsx";
 // import {isLoggedIn} from './auth.js';
