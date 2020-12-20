@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/app.css" crossorigin="anonymous">
     
-    <!--<script src="http://localhost:3000/static/js/bundle.js"></script> -->
-    <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-    <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-    <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
-   <title>Мой интернет</title>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Мой интернет</title>
   </head>
   <body>
     <div class="LoginForm">
-      <form method="POST" action="/api/login">
+      <form method="POST" action="/api/login/"> {% csrf_token %}
         <input
-          id="formControlsEmail"
+          id="login"
           type="text"
           name="username"
           label="Логин"
           placeholder="Введите логин"
         />
         <input 
-          id="formControlsPassword" 
+          id="password" 
           type="password"
           name="password"
           label="Пароль"
