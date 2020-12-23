@@ -13,7 +13,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "start": "http-server -a 0.0.0.0 -p 3000",
+    "start-fancy": "http-server -a 0.0.0.0 -p 3000",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
