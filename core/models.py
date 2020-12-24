@@ -42,6 +42,20 @@ class Operator(models.Model):
         verbose_name_plural = u'Операторы связи'
 
 
+class Region(models.Model):
+    name = models.CharField(max_length=30, unique=True, verbose_name=u"Регион")
+    company = models.ForeignKey(Company, verbose_name=u"Компания", on_delete=models.RESTRICT)
+
+    def __str__(self):
+        return '%s' % self.name
+
+    def __unicode__(self):
+        return '%s' % self.name
+
+    class Meta:
+        verbose_name = u'Регион'
+        verbose_name_plural = u'Регионы'
+
 class Role(models.Model):
     name = models.CharField(max_length=30, unique=True, verbose_name=u"Роль пользователя")
 

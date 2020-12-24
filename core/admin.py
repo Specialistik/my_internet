@@ -1,7 +1,7 @@
 import uuid
 from django.contrib import admin
 from django.contrib.auth.models import *
-from .models import Person, Operator, Role, Emails, Company
+from .models import Person, Operator, Role, Emails, Company, Region
 
 class PersonAdmin(admin.ModelAdmin):
     fields = ('login', 'password', 'role', 'fio', 'passport', 'address', 'sim', 'operator_type', 'passport_pic', 'passport_pic2', 'token', 'company')
@@ -19,5 +19,6 @@ admin.site.register(Operator)
 admin.site.register(Role)
 admin.site.register(Emails)
 admin.site.register(Company)
+admin.site.register(Region)
 admin.site.unregister(User)
 admin.site.unregister(Group)
