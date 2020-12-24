@@ -2,33 +2,18 @@ import React,{Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
-/*
-const Home = ()=> <div className="content">
-                    <div className="person_info">
-                      <p>Баланс: 200 р.</p>
-                      <p>Дата оплаты: 31.12.2020</p>
-                      <p>Сумма к оплате: 300 р.</p>
-                      <button className="btn btn-danger btn-pay">
-                        Пополнить
-                      </button>
-                    </div>
-                    <div className="card_info hidden">
-                      <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="basic-addon1">@</span>
-                        </div>
-                        <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
-                      </div>
-                    </div>
-                </div>
-*/
-
 class Home extends Component {
   constructor(props) {
     super(props);
     this.toggleCardInfo = this.toggleCardInfo.bind(this);
+    this.pickPaymentType = this.pickPaymentType.bind(this);
+    this.processPayment = this.processPayment.bind(this);
     this.state = {
       hidden: false,
+      sum: 300,
+      contractID: 194123,
+      balans: 200, 
+      date: '31.12.2020'
     };
   }
 
@@ -37,26 +22,40 @@ class Home extends Component {
     this.setState({ hidden: !currentState });
   }
 
+  pickPaymentType() {
+
+  }
+
+  processPayment(sum) {
+
+  }
+
+  updateSum(sum) {
+    this.setState({ sum : sum})
+  }
+
   render() {
     return (
       <div className="content">
-        <div className="person_info">
-          <p><span class = "label label-warning">Баланс: 200 р.</span></p>
-          <p><span class = "label label-warning">Дата оплаты: 31.12.2020</span></p>
-          <p><span class = "label label-warning">Сумма к оплате: 300 р.</span></p>
-          <button className="btn btn-danger btn-pay" onClick={this.toggleCardInfo}>
-            Пополнить
-          </button>
+        <div className="logo-wrapper">
+          <img src="/img/logo.svg" className="logo" alt="Лого"></img>
         </div>
+
+        <p><span class="label label-warning">Номер договора: { this.state.contractID } </span></p>
+        <p><span class="label label-warning">Баланс: { this.state.balans } р.</span></p>
+        <p><span class="label label-warning">Дата оплаты: { this.state.date }</span></p>
+        <p><span class="label label-warning">Сумма к оплате: {this.state.sum } р.</span></p>
+
         <div className="card_info {this.state.hidden ? 'hidden': null}">
-          <div className="input-group mb-3 row">
-            <input type="text" className="form-control col-md-12" placeholder="Номер карты"/>
-          </div>
-          <div className="input-group mb-3 row">
-            <input type="text" className="form-control col-md-5" placeholder="Срок действия"/>
-            <div className="col-md-1"></div>
-            <input type="text" className="form-control col-md-5" placeholder="CVV/CVC"/>
-          </div>
+          <p className="info">
+            Переведите { this.state.sum } рублей на номер (Тут номер телефона, который привязан к карте нашего проекта)
+            В комментарии <b>ОБЯЗАТЕЛЬНО</b> укажите номер своего договора: <b>{ this.state.contractID }</b>
+          </p>
+          <p>
+            <button className="btn btn-danger btn-pay" onClick={this.toggleCardInfo}>
+              Я оплатил 
+            </button>
+          </p>
         </div>
       </div>
     )
