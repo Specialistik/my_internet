@@ -1,6 +1,9 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
+import Login from "./login";
+import Landing from "./landing";
+// import register, { registerValidSW, checkValidServiceWorker, unregister } from "./registerServiceWorker"
+import './app.css';
 
 class Home extends Component {
   constructor(props) {
@@ -26,25 +29,25 @@ class Home extends Component {
 
   }
 
-  processPayment(sum) {
-
+  processPayment() {
+    alert('Платёж проверяется, информация обновится автоматически')
   }
 
-  updateSum(sum) {
-    this.setState({ sum : sum})
-  }
 
   render() {
     return (
       <div className="content">
         <div className="logo-wrapper">
-          <img src="/img/logo.svg" className="logo" alt="Лого"></img>
+          <img src="logo.png" className="logo" alt="Лого" width="45" height="4s5"></img>
+          <h1>Мой интернет</h1>
         </div>
-
-        <p><span class="label label-warning">Номер договора: { this.state.contractID } </span></p>
-        <p><span class="label label-warning">Баланс: { this.state.balans } р.</span></p>
-        <p><span class="label label-warning">Дата оплаты: { this.state.date }</span></p>
-        <p><span class="label label-warning">Сумма к оплате: {this.state.sum } р.</span></p>
+        
+        <div className="info">
+          <p><span class="label label-warning">Номер договора: { this.state.contractID } </span></p>
+          <p><span class="label label-warning">Баланс: { this.state.balans } р.</span></p>
+          <p><span class="label label-warning">Дата оплаты: { this.state.date }</span></p>
+          <p><span class="label label-warning">Сумма к оплате: {this.state.sum } р.</span></p>
+        </div>
 
         <div className="card_info {this.state.hidden ? 'hidden': null}">
           <p className="info">
@@ -67,7 +70,9 @@ export default class App extends Component{
     return(
       <Router>
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path="" component={ Landing } />
+          <Route exact path="/cabinet" component={ Home } />
+          <Route exact path="/login" component={ Login } />
         </div>
     </Router>
       )

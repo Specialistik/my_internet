@@ -133,3 +133,4 @@ client/node_modules/
 mobile/node_modules/
 media/
 static/admin/
+server.sh

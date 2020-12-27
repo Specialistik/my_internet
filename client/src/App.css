@@ -1,33 +1,16 @@
 html,body,#root{
   background: #A3A5A6;
+  font-family: 'Source Code Pro', monospace !important;
 }
-s
+
 .btn{
   background: #F8E462;
   color: #fff;
 }
 
-.container{
-  display: flex;
-  justify-content: space-between;
-}
-@media screen and (max-width: 520px) {
-  .navbar,.LoginForm{
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
 .custom-btn {
   background-color: black;
   width: 100%;
-}
-
-.nav-container{
-  height: 85px;
-}
-
-.navbar-default .navbar-nav>li>a{
-  line-height: 50px;
 }
 
 .form-group {
@@ -46,13 +29,11 @@ s
 }
 
 .card_info, label {
+  display: block;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.content {
-  font-size: 20px;
+  margin-left: 10px;
 }
 
 button {
@@ -75,15 +56,54 @@ p {
 
 .info, input {
   font-size: 20px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family:'Source Code Pro', monospace;
+  color: #F8E462;
 }
 
 .label-warning {
   width: 100%;
-  margin: 25px 40px;
-  padding: 3px;
+  margin: 40px;
+  padding-top: 0;
   background: #F8E462;
   color: black;
   border-radius: 5px;
   font-size: 20px;
+}
+
+.content {
+  background: url("background-mobile4.png");
+  background-size: cover;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+}
+
+h1 {
+  font-family: 'Source Code Pro', monospace !important;
+  float: left;
+  color: #F8E462;
+  margin:10px;
+  font-size: 29px !important;
+  margin-top: 16px;
+  margin-bottom: auto;
+}
+
+.logo-wrapper {
+  float: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  padding: 7px;
+}
+
+.p {
+  padding-top: 5px !important;
+  margin-top:5px !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 5px !important;
 }
