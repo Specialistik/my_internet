@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./login";
 import Landing from "./landing";
 // import register, { registerValidSW, checkValidServiceWorker, unregister } from "./registerServiceWorker"
-import './app.css';
+import './App.css';
 
 class Home extends Component {
   constructor(props) {
