@@ -7,7 +7,7 @@ from .models import Person
 
 
 def index(request):
-    return render(request, 'login.html')
+    return render(request, 'index.html')
 
 def login(request):
     if request.method == "POST":
@@ -17,4 +17,4 @@ def login(request):
         except Person.DoesNotExist:
             return JsonResponse({'result': False, 'token': ''})
     else:
-        return render(request, 'index.html')
+        return render(request, 'login.html')

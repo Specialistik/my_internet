@@ -71,7 +71,7 @@ p {
 }
 
 .content {
-  background: url("background-mobile4.png");
+  /*background: url("background-mobile4.png");*/
   background-size: cover;
   font-size: 20px;
   position: absolute;

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./login";
-import Landing from "./landing";
-// import register, { registerValidSW, checkValidServiceWorker, unregister } from "./registerServiceWorker"
 import './App.css';
 
 class Home extends Component {
@@ -12,13 +10,21 @@ class Home extends Component {
     this.pickPaymentType = this.pickPaymentType.bind(this);
     this.processPayment = this.processPayment.bind(this);
     this.state = {
+      token: localStorage.getItem('token') || null,
       hidden: false,
       sum: 300,
       contractID: 194123,
       balans: 200, 
       date: '31.12.2020'
     };
+    /*
+    if (this.state.token === null) {
+      document.location.assign('login')
+    }
+    */
   }
+
+  
 
   toggleCardInfo() {
     const currentState = this.state.hidden;
@@ -70,11 +76,10 @@ export default class App extends Component{
     return(
       <Router>
         <div>
-          <Route exact path="" component={ Landing } />
-          <Route exact path="/cabinet" component={ Home } />
+          <Route exact path="" component={ Home } />
           <Route exact path="/login" component={ Login } />
         </div>
-    </Router>
-      )
+      </Router>
+    )
   }
 }
