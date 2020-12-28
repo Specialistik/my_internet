@@ -17,14 +17,7 @@ class Home extends Component {
       balans: 200, 
       date: '31.12.2020'
     };
-    /*
-    if (this.state.token === null) {
-      document.location.assign('login')
-    }
-    */
   }
-
-  
 
   toggleCardInfo() {
     const currentState = this.state.hidden;
@@ -39,20 +32,19 @@ class Home extends Component {
     alert('Платёж проверяется, информация обновится автоматически')
   }
 
-
   render() {
     return (
       <div className="content">
         <div className="logo-wrapper">
-          <img src="logo.png" className="logo" alt="Лого" width="45" height="4s5"></img>
+          <img src="logo.png" className="logo" alt="Лого"></img>
           <h1>Мой интернет</h1>
         </div>
         
-        <div className="info">
-          <p><span class="label label-warning">Номер договора: { this.state.contractID } </span></p>
-          <p><span class="label label-warning">Баланс: { this.state.balans } р.</span></p>
-          <p><span class="label label-warning">Дата оплаты: { this.state.date }</span></p>
-          <p><span class="label label-warning">Сумма к оплате: {this.state.sum } р.</span></p>
+        <div className="info info_upper">
+          <p>Номер договора: { this.state.contractID }</p>
+          <p>Баланс: { this.state.balans } р.</p>
+          <p>Дата оплаты: { this.state.date }</p>
+          <p>Сумма к оплате: {this.state.sum } р.</p>
         </div>
 
         <div className="card_info {this.state.hidden ? 'hidden': null}">
@@ -61,7 +53,7 @@ class Home extends Component {
             В комментарии <b>ОБЯЗАТЕЛЬНО</b> укажите номер своего договора: <b>{ this.state.contractID }</b>
           </p>
           <p>
-            <button className="btn btn-danger btn-pay" onClick={this.toggleCardInfo}>
+            <button className="btn btn-pay" onClick={this.processPayment}>
               Я оплатил 
             </button>
           </p>

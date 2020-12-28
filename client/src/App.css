@@ -29,6 +29,7 @@ html, body, #root{
 }
 
 .card_info, label {
+  margin-top: 10px;
   display: block;
   width: 100%;
   padding-left: 30px;
@@ -37,6 +38,7 @@ html, body, #root{
 }
 
 button {
+  border: 0;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -44,7 +46,8 @@ button {
   font-size: 26px !important;
   font-weight: 900 !important;
   background-color: #F8E462 !important;
-  color: black !important;
+  color: #A3A5A6 !important;
+
 }
 
 p {
@@ -57,26 +60,12 @@ p {
 .info, input {
   font-size: 20px;
   font-family:'Source Code Pro', monospace;
-  color: #F8E462;
-}
-
-.label-warning {
-  width: 100%;
-  margin: 40px;
-  padding-top: 0;
-  background: #F8E462;
-  color: black;
-  border-radius: 5px;
-  font-size: 20px;
+  color: white;
 }
 
 .content {
-  /*background: url("background-mobile4.png");*/
   background-size: cover;
   font-size: 20px;
-  position: absolute;
-  bottom: 0;
-  top: 0;
 }
 
 h1 {
@@ -90,20 +79,31 @@ h1 {
 }
 
 .logo-wrapper {
-  float: left;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 0;
+  height: 70px;
 }
 
 .logo {
   width: 60px;
   height: 60px;
   padding: 7px;
+  margin-bottom: 30px;
 }
 
 .p {
-  padding-top: 5px !important;
-  margin-top:5px !important;
-  padding-bottom: 5px !important;
-  margin-bottom: 5px !important;
+  padding: 0;
+}
+
+.info_upper {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top:4px;
+  border: 2px solid #F8E462;
+}
+
+.info_upper p {
+  margin-left: 15px;
+  margin-right: 15px;
 }
