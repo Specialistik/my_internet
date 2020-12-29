@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, HelpBlock, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import './index.css';
 
 function FieldGroup({ id, label, help, ...props }) {
   return (
@@ -30,7 +31,7 @@ export default class Login extends Component{
       [name]: value
     });
   }
-
+/*
   handleRegistration = e =>{
     e.preventDefault() ;
     let url = "http://localhost:5000/register"
@@ -54,10 +55,11 @@ export default class Login extends Component{
       }
     }).catch(err => console.log(err));
   }
-
+*/
   handleSignIn = e =>{
+    console.log('before ajax request');
     e.preventDefault() ;
-    let url = "http://localhost:8000/login"
+    let url = "http://localhost:8000/api/login"
     let formData  = new FormData();
     let data = this.state;
     for(let name in data) {
@@ -69,6 +71,7 @@ export default class Login extends Component{
       body: formData
     }).then( res => res.json())
     .then(data=>{
+      console.log('after ajax ', data)
       localStorage.setItem('access_token', data.access_token);
       localStorage.setItem('username', data.username);
       if (localStorage.getItem("access_token") !== null && localStorage.getItem("access_token")!=="undefined") {
@@ -91,15 +94,16 @@ export default class Login extends Component{
             onChange={this.handleChange}
             placeholder="Введите логин"
           />
+
           <FieldGroup 
-          id="formControlsPassword" 
-          type="password"
-          name="password"
-          label="Пароль" 
-          value={this.state.password}
-          onChange={this.handleChange}
-          placeholder="Введите пароль"
-           />
+            id="formControlsPassword" 
+            type="password"
+            name="password"
+            label="Пароль" 
+            value={this.state.password}
+            onChange={this.handleChange}
+            placeholder="Введите пароль"
+          />
 
           <Button className="custom-btn" onClick={this.handleSignIn}>Войти</Button>
           </form>
