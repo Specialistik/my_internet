@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, HelpBlock, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import './index.css';
 
 function FieldGroup({ id, label, help, ...props }) {
   return (
@@ -17,8 +16,9 @@ export default class Login extends Component{
     super(props);
 
     this.state = {
-      username:"",
-      password:""
+      username: "",
+      password: "",
+      state: localStorage.getItem('access_token')
     }
 
  }
