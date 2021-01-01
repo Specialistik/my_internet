@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start-fancy": "webpack-dev-derver --host 0.0.0.0",
-    "start": "HOST=0.0.0.0 PORT=3000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
