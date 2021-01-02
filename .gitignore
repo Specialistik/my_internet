@@ -130,7 +130,7 @@ dmypy.json
 
 node_modules/
 client/node_modules/
-mobile/node_modules/
+mobile_app/node_modules/
 media/
 static/admin/
 server.sh

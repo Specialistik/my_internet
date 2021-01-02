@@ -7,7 +7,7 @@ export default class Cabinet extends Component {
     this.pickPaymentType = this.pickPaymentType.bind(this);
     this.processPayment = this.processPayment.bind(this);
     this.state = {
-      token: localStorage.getItem('access-token') || null,
+      access_token: localStorage.getItem('access_token') || null,
       hidden: false,
       sum: 300,
       contractID: 194123,

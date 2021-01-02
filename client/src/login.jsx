@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, HelpBlock, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import Cabinet from "./cabinet";
 
 function FieldGroup({ id, label, help, ...props }) {
   return (
@@ -18,9 +19,8 @@ export default class Login extends Component{
     this.state = {
       username: "",
       password: "",
-      state: localStorage.getItem('access_token')
+      state: localStorage.getItem('access_token') || null
     }
-
  }
 
   handleChange=event=>{
@@ -56,7 +56,7 @@ export default class Login extends Component{
     }).catch(err => console.log(err));
   }
 */
-  handleSignIn = e =>{
+  handleSignIn = (e) => {
     console.log('before ajax request');
     e.preventDefault() ;
     let url = "http://localhost:5000/api/login"
@@ -73,11 +73,10 @@ export default class Login extends Component{
     .then(data=>{
       console.log('after ajax ', data)
       localStorage.setItem('access_token', data.access_token);
-      localStorage.setItem('username', data.username);
-      if (localStorage.getItem("access_token") !== null && localStorage.getItem("access_token")!=="undefined") {
-        window.location.replace("/")
-      }else{
-          alert(data.error);
+      if (localStorage.getItem("access_token") !== null && localStorage.getItem("access_token") !== "undefined") {
+        return this.render(<Cabinet />)
+      } else {
+        alert(data.error);
       }
     }).catch(err => console.log(err));
   }

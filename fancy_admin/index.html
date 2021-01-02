@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Admin</title>
+
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/underscore-1.6.0.js"></script>
+    <script type="text/javascript" src="js/backbone.min-1.1.2.js"></script>
+    <script type="text/javascript" src="js/backbone.localStorage-1.1.0.js"></script>
+    <script type="text/javascript" src="js/react.min-0.14.0.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/theme.css">
+
+	<script type="text/javascript" src="build/app.js"></script>
+	<script type="text/javascript" src="build/views.js"></script>
+
+</head>
+<body>
+
+	<div class='col-xs-12'>
+
+        <div id="app"> </div>
+        <div class="clearfix"> </div>
+
+    </div>
+
+	<script>
+		$(document).ready(function() {
+			Backbone.history.start();
+		});
+	</script>
+
+</body>
+</html>
