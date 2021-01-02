@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version= "1.1" width="1440px" height="2560px" viewBox="0 0 1440 2560">
-<rect x="0" y="0" width="1440" height="2560" fill="rgb(255,255,255)"/>
-<g id="layer1">
-<g style="fill:rgb(0,0,0); fill-opacity:1.0; stroke-linejoin: miter">
-<path d="M0.0,739.8241L720.0,739.82446L1440.0,739.8248L1440.0,1820.1754Q720.0,1820.1757,0.0,1820.176Q0.0,1280.0,0.0,739.8241"/>
-</g>
-</g>
-</svg>
