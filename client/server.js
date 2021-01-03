@@ -37,4 +37,5 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, '0.0.0.0');
+console.log('listening on all availiable interfaces');
