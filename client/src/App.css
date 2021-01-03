@@ -1,6 +1,7 @@
 html, body, #root{
   background: #A3A5A6;
   font-family: 'Source Code Pro', monospace !important;
+  color: black;
 }
 
 .btn{
@@ -60,7 +61,7 @@ p {
 .info, input {
   font-size: 20px;
   font-family:'Source Code Pro', monospace;
-  color: white;
+  color: black;
 }
 
 .content {

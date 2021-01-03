@@ -24,10 +24,10 @@ app.get('', (req, res) => {
 
 app.post('/api/login', (req, res) => {
     const sql = "SELECT * FROM core_person WHERE username = '$1' AND password = '$2'";
-    console.log('request is ', req, ' res is ', res);
+    //console.log('request is ', req, ' res is ', res);
     client.query(sql, ['test_user', 'test_user']).then(res => {
         if (res.rows.length > 0) {
-            console.log('the rows are', res.rows);
+            //console.log('the rows are', res.rows);
             res.send({access_token: res.rows[0]});
         } else {
             res.send({error: "Неверный логин или пароль"})

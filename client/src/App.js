@@ -11,6 +11,11 @@ export default class App extends Component {
     }
   }
   render = () => {
-    return (this.state.token === null) ? <Login /> : <Cabinet />
+    /*if (this.state.token === null) {
+      return <Login />
+    } else { */
+      return <Cabinet />
+    //}
+    //return (this.state.token === null) ? <Login /> : <Cabinet />
   }
 }
