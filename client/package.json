@@ -21,7 +21,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "start-fancy": "webpack-dev-derver --host 0.0.0.0",
+    "start-fancy": "webpack-dev-server --host 0.0.0.0",
     "client": "react-scripts start",
     "server": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
