@@ -12,9 +12,9 @@ def get_random_alphanumeric_string(length):
     print("Random alphanumeric String is:", result_str)
 
 class PersonAdmin(admin.ModelAdmin):
-    fields = ( 'fio', 'passport', 'address', 'sim', 'operator_type', 'passport_pic', 'passport_pic2', 'company')
-    list_display = ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'passport_pic', 'passport_pic2', 'company')
-    search_fields =  ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'company')
+    fields = ( 'fio', 'passport', 'address', 'sim', 'operator_type', 'passport_pic', 'passport_pic2', 'company', 'balans', 'monthly_payment', 'payment_date')
+    list_display = ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'passport_pic', 'passport_pic2', 'company', 'balans', 'monthly_payment', 'payment_date')
+    search_fields =  ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'company', 'balans', 'monthly_payment', 'payment_date')
 
     def save_model(self, request, obj, form, change):
         if not obj.token:
