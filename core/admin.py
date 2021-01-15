@@ -6,15 +6,20 @@ from django.contrib import admin
 from django.contrib.auth.models import *
 from .models import Person, Operator, Emails, Company, Region, Payment
 
+
 def get_random_alphanumeric_string(length):
     letters_and_digits = string.ascii_letters + string.digits
     result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
     print("Random alphanumeric String is:", result_str)
 
+
 class PersonAdmin(admin.ModelAdmin):
-    fields = ( 'fio', 'passport', 'address', 'sim', 'operator_type', 'passport_pic', 'passport_pic2', 'company', 'balans', 'monthly_payment', 'payment_date')
-    list_display = ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'passport_pic', 'passport_pic2', 'company', 'balans', 'monthly_payment', 'payment_date')
-    search_fields =  ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'company', 'balans', 'monthly_payment', 'payment_date')
+    fields = ('fio', 'passport', 'address', 'sim', 'operator_type', 'passport_pic', 'passport_pic2', 'company',
+               'balance', 'monthly_payment', )
+    list_display = ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'passport_pic',
+                    'passport_pic2', 'company', 'balance', 'monthly_payment', )
+    search_fields = ('login', 'password', 'fio', 'passport', 'sim', 'address', 'operator_type', 'company', 'balance',
+                      'monthly_payment')
 
     def save_model(self, request, obj, form, change):
         if not obj.token:
