@@ -37,5 +37,6 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-app.listen(port, '0.0.0.0');
-console.log('listening on all availiable interfaces');
+app.listen();
+// app.listen(port, '0.0.0.0');
+// console.log('listening on all availiable interfaces');
