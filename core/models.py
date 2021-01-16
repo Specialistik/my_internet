@@ -74,7 +74,7 @@ class Person(models.Model):
     company = models.ForeignKey(Company, verbose_name=u"Компания", on_delete=models.RESTRICT)
     balance = models.IntegerField(default=0, verbose_name=u"Баланс")
     monthly_payment = models.IntegerField(default=500, verbose_name=u"Платёж в месяц")
-    payment_date = models.DateField(defult=datetime.datetime.now(), verbose_name=u"Дата следующего платежа")
+    payment_date = models.DateField(default=datetime.datetime.now(), verbose_name=u"Дата следующего платежа")
 
     def __str__(self):
         return '%s' % self.fio

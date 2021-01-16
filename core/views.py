@@ -38,11 +38,17 @@ def payment(request):
             return JsonResponse({'result': False, 'token': '', 'message': 'person not found'})
 
 
-@require_http_methods(["POST"])
+@require_http_methods(["GET"])
 def profile(request):
     if ('access_token' in request.headers):
         try:
             person = Person.objects.get(token=request.headers['access_token'])
-            return JsonResponse(person)
+            return JsonResponse({
+                'balance': person.balance,
+                'payment_date': person.payment_date,
+                'monthly_payment': person.monthly_payment,
+                'fio': person.fio,
+                'sim': person.sim
+            })
         except Person.DoesNotExist:
             return JsonResponse({'result': False, 'token': '', 'message': 'person not found'})
