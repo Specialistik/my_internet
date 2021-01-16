@@ -23,7 +23,7 @@ from core.views import login, index, payment, profile
 
 urlpatterns = [
     path('', admin.site.urls),
-    path('api/login/', login),
+    path('api/login', login),
     path('api/payment', payment),
     path('api/profile', profile),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
